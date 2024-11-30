@@ -21,9 +21,7 @@ app.get('/randomcard', async (req, res) => {
 app.get('/SearchContainsName', async (req, res) => {
   try {
     const {name} = req.query
-    console.log('name '+name);
     const response = await axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${name}`);
-    //console.log(response.data);
     res.json(response.data);
   } catch (error) {
     res.status(500).send('Error al obtener datos');
@@ -33,5 +31,5 @@ app.get('/SearchContainsName', async (req, res) => {
 
 
 app.listen(5000, () => {
-  console.log('Proxy funcionando en http://localhost:5000');
+  //console.log('Proxy funcionando en http://localhost:5000');
 });
